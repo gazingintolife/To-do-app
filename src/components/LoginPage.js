@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth';
 
-export const LoginPage = (props) => (
+export const LoginPage = ({startLogin}) => (
     <div>
         <h1>This is Login Page</h1>
-        <button onClick = {props.startLogin}>Login With Google</button>
+        <button onClick = {startLogin}>Login With Google</button>
     </div>
 );
 

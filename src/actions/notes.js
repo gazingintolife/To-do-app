@@ -1,26 +1,16 @@
 import database from '../firebase/firebase';
 
-export const addNote = (
-    {   
-        id,
-        title = '',
-        createdAt = 0,
-        category = ''
-    } = {}) => ({
+export const addNote = (note) => ({
         type: 'ADD_NOTE',
-        note: {
-            id,
-            title,
-            createdAt,
-            category
-        }
+        note
     });
 
 export const startAddNote = (notesData = {}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const { title = '', createdAt = 0, category = ''} = notesData;  //destructuring
         const note = { title, createdAt, category};
-        return database.ref('notes').push(note).then((ref) => {
+        return database.ref(`users/${uid}/notes`).push(note).then((ref) => {
             dispatch(addNote({
                 id: ref.key,
                 ...note
@@ -37,8 +27,9 @@ export const editNote = (id, updates) => ({
 });
 
 export const startEditNote = (id, updates) => {
-    return (dispatch) => {
-      database.ref(`notes/${id}`).update(updates).then(() => {
+    return (dispatch, getState) => {
+      const uid = getState().auth.uid;
+      database.ref(`users/${uid}/notes/${id}`).update(updates).then(() => {
         dispatch(editNote(id, updates));
       });
     };
@@ -50,8 +41,9 @@ export const deleteNote = ({id} = {}) => ({
 });
 
 export const startDeleteNote = ({id} ={}) => {
-    return (dispatch) => {
-      return database.ref(`notes/${id}`).remove().then(() => {
+    return (dispatch, getState) => {
+      const uid = getState().auth.uid;
+      return database.ref(`users/${uid}/notes/${id}`).remove().then(() => {
           dispatch(deleteNote({id}));
       });
   };
@@ -63,8 +55,9 @@ export const setNotes  = (notes) => ({
   });
   
   export const startSetNotes = () => {
-    return (dispatch) => {
-      return database.ref('notes').once('value').then((snapshot) => {
+    return (dispatch, getState) => {
+      const uid = getState().auth.uid;
+      return database.ref(`users/${uid}/notes`).once('value').then((snapshot) => {
         const notes = [];
   
         snapshot.forEach((childSnapshot) => {

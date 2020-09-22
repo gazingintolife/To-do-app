@@ -18,34 +18,33 @@ const jsx = (
     </Provider>
 );
 
-// let hasRendered = false;
-// const renderApp = () => {
-//     if(!hasRendered){
-//         ReactDOM.render(jsx, document.getElementById('app'));
-//         hasRendered= true;
-//     }
-// }
+let hasRendered = false;
+const renderApp = () => {
+    if(!hasRendered){
+        ReactDOM.render(jsx, document.getElementById('app'));
+        hasRendered= true;
+    }
+}
 
 
 ReactDOM.render( <p>...Loading</p> , document.getElementById('app'));
 
-ourStore.dispatch(startSetNotes()).then(() => {
-    ReactDOM.render(jsx, document.getElementById('app'));
-});
-
-// firebase.auth().onAuthStateChanged((user) => {
-//     if(user){
-//         ourStore.dispatch(login(user.uid));
-//         renderApp();
-//         if(history.location.pathname === '/'){
-//             history.push('/dashboard');
-//         }
-//     } else {
-//         ourStore.dispatch(logout());
-//         renderApp();
-//         history.push('/');
-//     }
-// })
+firebase.auth().onAuthStateChanged((user) => {
+    if(user){
+        ourStore.dispatch(login(user.uid));
+        console.log('LogedIn');
+        ourStore.dispatch(startSetNotes()).then(() => {
+            renderApp();
+            if(history.location.pathname === '/'){
+            history.push('/dashboard');
+        }; 
+        })
+    } else {
+        ourStore.dispatch(logout());
+        renderApp();
+        history.push('/');
+    }
+})
 
 
  

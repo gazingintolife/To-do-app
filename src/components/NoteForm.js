@@ -11,7 +11,7 @@ export default class NoteForm extends React.Component {
             createdAt : moment().format("MMM, DD, YYYY"),
             error: '',
             showModal: true,
-            category : props.secondNote ? props.secondNote.category : ''
+            category : props.secondNote ? props.secondNote.category : 'todo'
         }
     }
     
@@ -77,8 +77,8 @@ export default class NoteForm extends React.Component {
                     onChange = {this.onTitleChange}
                     />
                     Select One
-                    <RadioGroup onChange={ this.onChange } horizontal>
-                    <RadioButton value="todo">
+                    <RadioGroup onChange={ this.onChange } value='todo' horizontal>
+                    <RadioButton value="todo" >
                       ToDo
                     </RadioButton>
                     <RadioButton value="inprogress">
