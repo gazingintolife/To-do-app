@@ -1,6 +1,6 @@
 import React from 'react';
 import NoteForm from './NoteForm';
-import {addNote} from '../actions/notes';
+import {addNote, startAddNote} from '../actions/notes';
 import { connect } from 'react-redux';
 import Todo from './Todo';
 import InProgress from './InProgress';
@@ -11,7 +11,7 @@ const AddNote = (props) =>{
         <div>
         <NoteForm 
         onSubmit = {(note) => {
-            props.dispatch(addNote(note));
+            props.dispatch(startAddNote(note));
             props.history.push('/');
         }}
         onModalClose = {() => {
