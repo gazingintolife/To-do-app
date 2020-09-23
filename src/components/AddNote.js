@@ -11,6 +11,7 @@ const AddNote = (props) =>{
         <div>
         <NoteForm 
         onSubmit = {(note) => {
+            console.log(note);
             props.dispatch(startAddNote(note));
             props.history.push('/');
         }}

@@ -10,12 +10,13 @@ export const startAddNote = (notesData = {}) => {
         const uid = getState().auth.uid;
         const { title = '', createdAt = 0, category = ''} = notesData;  //destructuring
         const note = { title, createdAt, category};
+        console.log(uid);
         return database.ref(`users/${uid}/notes`).push(note).then((ref) => {
             dispatch(addNote({
                 id: ref.key,
                 ...note
             }));
-            console.log(ref.key);
+            
         }) ;
     };
 };
