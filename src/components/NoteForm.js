@@ -8,7 +8,7 @@ export default class NoteForm extends React.Component {
         super(props);
         this.state = {
             title: props.secondNote ? props.secondNote.title : '',
-            createdAt : moment().format("MMM, DD, YYYY"),
+            createdAt : moment().format("hh:mm A MMM DD"),
             error: '',
             showModal: true,
             category : props.secondNote ? props.secondNote.category : ''

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const Completed = (props) => (
     <div>
-        <h3> Completed </h3>
+        <h3><strong> Completed </strong></h3>
         { props.notes.map((note) => {
             if (note.category === 'completed'){
                 return (<NoteListItem key = {note.id} {...note}/>)

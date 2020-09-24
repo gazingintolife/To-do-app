@@ -1,0 +1,22 @@
+.add-expense__button{
+    padding: $m-size;
+    margin-top: $m-size;
+    display: flex;
+    justify-content: center;
+}
+
+#dash-content{
+    display: flex;
+    justify-content: space-between;
+    padding: $m-size;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.dashboard{
+    background: #74C69D;
+    padding: $s-size $l-size;
+    border-radius: 32px;
+    text-decoration: none;
+    width: 19rem;
+}

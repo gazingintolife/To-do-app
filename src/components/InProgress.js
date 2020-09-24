@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const InProgress = (props) => (
     <div>
-        <h3> In Progress </h3>
+        <h3><strong>In Progress</strong></h3>
         { props.notes.map((note) => {
             if (note.category === 'inprogress'){
                 return (<NoteListItem key = {note.id} {...note}/>)
