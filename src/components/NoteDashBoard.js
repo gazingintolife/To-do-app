@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import Todo from './Todo';
 import InProgress from './InProgress';
 import Completed from './Completed';
-import {Link} from 'react-router-dom';
-import {AddNote} from './AddNote';
-import { bindActionCreators } from 'redux';
+import AddNote from './AddNote';
 
 
 const NoteDashBoard = () => {
@@ -13,7 +11,7 @@ const NoteDashBoard = () => {
     return (
         <div>
             <div className="add-note-btn">
-            <button className="button" onClick={() => setVisible(true)}>Add Note</button>
+            <button className="button" onClick={() => setVisible(!visibility)}>Add Note</button>
             </div>
             {visibility==true && <AddNote/>}
             <div className="content-container" id="dash-content">
