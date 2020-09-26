@@ -1,0 +1,23 @@
+.btn-grp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $l-size;
+}
+
+.button__edit{
+    @extend .button;
+    margin: 8px 0;
+}
+
+.radio__select{
+    display: block;
+    margin: $m-size 0;
+    font-size: $m-size;
+    font-weight: 500;
+    text-align: center;
+}
+
+.radio__btn{
+    margin: $m-size $m-size;
+}

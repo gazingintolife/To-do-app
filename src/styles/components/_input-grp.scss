@@ -1,0 +1,16 @@
+.input-grp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: $m-size $l-size;
+
+    @media (min-width: $desktop-breakpoint) {
+        flex-direction: row;
+        margin-bottom: $l-size;
+    }
+}
+
+.btn-inbox{
+    display: flex;
+    justify-content: space-between;
+}

@@ -9,21 +9,14 @@ const EditNote = (props) => (
             secondNote = {props.oneNote}
             onSubmit = { (note) => {
                 props.startEditNote(props.oneNote.id, note);
-                props.history.push('/');      
-                console.log('updates', note);
-                console.log(note);          
+                props.history.push('/');          
             } }
             handleDelete = { () => {
                 props.startDeleteNote({ id: props.oneNote.id});
                 props.history.push('/');
             } }
-            onModalClose = {() => {
-                props.history.push('/');
-            }}
             deleteOption = {true}
         />
-        
-        {console.log(props.oneNote)}
     </div>
 ); 
 

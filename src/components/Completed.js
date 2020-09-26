@@ -3,7 +3,7 @@ import NoteListItem from './NoteListItem';
 import { connect } from 'react-redux';
 
 const Completed = (props) => (
-    <div>
+    <div className="category">
         <h3><strong> Completed </strong></h3>
         { props.notes.map((note) => {
             if (note.category === 'completed'){

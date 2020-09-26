@@ -3,7 +3,7 @@ import NoteListItem from './NoteListItem';
 import { connect } from 'react-redux';
 
 const InProgress = (props) => (
-    <div>
+    <div className="category">
         <h3><strong>In Progress</strong></h3>
         { props.notes.map((note) => {
             if (note.category === 'inprogress'){
