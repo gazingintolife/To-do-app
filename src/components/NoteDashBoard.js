@@ -15,13 +15,13 @@ const NoteDashBoard = () => {
             </div>
             {visibility==true && <AddNote/>}
             <div className="content-container" id="dash-content">
-                <div className="dashboard__category">
+                <div className="dashboard__category todo">
                     <Todo/>
                 </div>
-                <div className="dashboard__category">
+                <div className="dashboard__category inprogress">
                     <InProgress/>
                 </div>
-                <div className="dashboard__category">
+                <div className="dashboard__category completed">
                     <Completed/>
                 </div>
             </div>

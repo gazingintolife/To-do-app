@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 const Todo = (props) => (
-    <div className="category">
+    <div className="category todo">
         <h3><strong>To Do</strong></h3>
         { props.notes.map((note) => {
             if (note.category === 'todo'){
