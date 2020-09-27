@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { startEditNote, startDeleteNote} from '../actions/notes';
 
 const EditNote = (props) => (
-    <div>
+    <div className="animate__edit">
         <NoteForm 
             secondNote = {props.oneNote}
             onSubmit = { (note) => {

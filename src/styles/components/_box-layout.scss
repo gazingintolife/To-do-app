@@ -1,7 +1,7 @@
  .box-layout{
      align-items: center;
      background: url('/images/bg.jpg');
-     background-size: cover;
+     background-size: contain;
      display: flex;
      height: 100vh;
      justify-content: center;
@@ -15,10 +15,18 @@
      padding: $l-size $m-size;
      text-align: center;
      width: 25rem;
+     animation: zoomInDown; 
+     animation-duration: 1s;
  }
 
  .box-layout__title{
      margin: 0 0 $m-size 0;
      line-height: 1;
      color: white;
+ }
+
+ .animation_logIn{
+    animation: heartBeat; 
+    animation-duration: 1s;
+    animation-delay: 1s;
  }

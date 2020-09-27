@@ -2,44 +2,30 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: $m-size;
+    padding: $s-size;
     text-align: center;
     color: whitesmoke;
 
     @media (max-width: $desktop-breakpoint ) {
         flex-direction: column;
         margin: $m-size 0;
-        padding: $l-size;
+        padding: $l-size ;
     }
-}
-
-.dashboard__category{
-    display: block;
-    background: #74C69D;
-    border-radius: 32px;
-    text-decoration: none;
-    width: 24rem;
-}
-
-.category{
-    display: block;
-    border-radius: 12px;
 }
 
 .add-note-btn{
     display: flex;
     justify-content: center;
     margin: $s-size;
+    animation: bounceInDown; 
+    animation-duration: 1s;
+}
+.add:hover{
+    animation: bounce; 
+    animation-duration: 1s;
 }
 
-.todo{
-    background-color: #d00000;
-}
-
-.inprogress{
-    background: #faa307
-}
-
-.completed{
-    background: #4fcc28
+.animate_edit{
+    animation: fadeIn; 
+    animation-duration: 1s;
 }

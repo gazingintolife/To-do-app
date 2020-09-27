@@ -11,19 +11,13 @@ const NoteDashBoard = () => {
     return (
         <div>
             <div className="add-note-btn">
-            <button className="button" onClick={() => setVisible(!visibility)}>Add Note</button>
+            <button className="button add" onClick={() => setVisible(!visibility)}>Add Note</button>
             </div>
             {visibility==true && <AddNote/>}
-            <div className="content-container" id="dash-content">
-                <div className="dashboard__category todo">
-                    <Todo/>
-                </div>
-                <div className="dashboard__category inprogress">
-                    <InProgress/>
-                </div>
-                <div className="dashboard__category completed">
-                    <Completed/>
-                </div>
+             <div className="content-container" id="dash-content">
+                <Todo/>
+                <InProgress/>
+                <Completed/>
             </div>
         </div>
     );

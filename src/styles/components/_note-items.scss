@@ -3,19 +3,16 @@
     margin: 0 0 3rem 0 ;
     line-height: 1;
     border-radius: 0;
-    font-style: serif;
-    font-weight: 500;
     text-align: left;
     font-size: $s-size;
-    padding: 0 $s-size;
+    padding: 0 $s-size;    
+    background-color:transparent;
 }
 
 .note{
     text-decoration: none;
-    color: black;      
-}
-
-#note_item{
-    background-color:transparent;
-
+    color: black; 
+    font-style: serif;
+    font-weight: 600;  
+    text-align: left;  
 }

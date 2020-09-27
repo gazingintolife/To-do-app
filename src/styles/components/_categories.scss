@@ -1,0 +1,31 @@
+.category{
+    display: block;
+    border-radius: 12px; 
+    width: 24rem;
+    margin-bottom: $m-size;
+}
+
+.completed h3{
+    text-decoration: line-through solid red 2px;
+}
+
+.todo{
+    background-color: #d00000;
+    box-shadow: 0px 2px 20px black; 
+    animation: bounceInLeft; 
+    animation-duration: 1s; 
+}
+
+.inprogress{
+    background: #faa307;
+    box-shadow: 0px 2px 20px black;
+    animation: bounceInUp; 
+    animation-duration: 1s;
+}
+
+.completed{
+    background: #4fcc28;
+    box-shadow: 0px 2px 20px black;  
+    animation: bounceInRight; 
+    animation-duration: 1s;
+}

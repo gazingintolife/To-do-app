@@ -1,5 +1,7 @@
 .header{
     background: $bg-green;
+    animation: flipInX; 
+    animation-duration: 1s;
 }
 
 .header__content{
